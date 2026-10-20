@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roaa Raafat | AI Researcher & ML Engineer</title>
+<meta name="description" content="Portfolio of Roaa Raafat: machine learning projects in computer vision, reinforcement learning, explainable AI and LLM systems, with demo videos.">
+<meta property="og:title" content="Roaa Raafat | AI Researcher & ML Engineer">
+<meta property="og:description" content="Projects, research and demos in computer vision, explainable AI and LLM systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{navy:{800:'#1e293b',900:'#0f172a'},accent:{500:'#3b82f6',600:'#2563eb'}}}}}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold text-navy-900">Roaa<span class="text-accent-600">.AI</span></a>
+    <div class="flex gap-4 sm:gap-8 text-sm font-medium text-slate-600">
+      <a href="#about" class="hover:text-accent-600">About</a>
+      <a href="#projects" class="hover:text-accent-600">Projects</a>
+      <a href="#journey" class="hover:text-accent-600">Journey</a>
+      <a href="#contact" class="hover:text-accent-600">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="pt-32 pb-20 lg:pt-44 lg:pb-28 px-4 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+  <div class="md:w-3/5 space-y-6">
+    <h1 class="text-4xl md:text-6xl font-bold text-navy-900 leading-tight">Hi, I’m Roaa Raafat.</h1>
+    <p class="text-xl text-slate-600 leading-relaxed max-w-2xl">
+      AI researcher and machine learning engineer. I build deep learning, reinforcement learning and LLM systems, from research prototypes to working services.
+    </p>
+    <div class="flex flex-wrap gap-4 pt-2">
+      <a href="#projects" class="px-6 py-3 bg-navy-900 text-white rounded-lg font-medium hover:bg-accent-600 transition-colors">View projects</a>
+      <a id="cv-btn" href="#" class="px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-lg font-medium hover:bg-slate-50">Download CV</a>
+      <a href="#contact" class="px-6 py-3 text-slate-700 font-medium hover:text-accent-600">Contact me</a>
+    </div>
+  </div>
+  <div class="md:w-2/5 flex justify-center">
+    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-slate-200 border-8 border-white shadow-xl overflow-hidden">
+      <img src="assets/profile.jpg" alt="Roaa Raafat" class="w-full h-full object-cover"
+           onerror="this.onerror=null;this.src='https://placehold.co/400x400/1e293b/ffffff?text=RR'">
+    </div>
+  </div>
+</header>
+
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="text-3xl font-bold text-navy-900 mb-6">About and research interests</h2>
+      <p class="text-slate-600 mb-4 leading-relaxed">
+        I hold a BSc in Data Science and Artificial Intelligence from Zewail City of Science and Technology (June 2026). My work applies deep learning and reinforcement learning to complex systems such as city traffic, and I care about models whose decisions can be explained.
+      </p>
+      <p class="text-slate-600 mb-6 leading-relaxed">
+        I am applying for Master’s and PhD programs in AI for smart cities, and I am open to AI/ML engineering and data science roles.
+      </p>
+      <ul class="space-y-2 text-slate-700 font-medium">
+        <li>Deep learning and metaheuristics</li>
+        <li>Explainable AI (Grad-CAM, LIME, SHAP)</li>
+        <li>Reinforcement learning for traffic control</li>
+        <li>Agentic systems and RAG pipelines</li>
+      </ul>
+    </div>
+    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+      <h3 class="text-xl font-bold text-navy-900 mb-4">Technical stack</h3>
+      <div id="skills" class="space-y-4"></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Research and projects</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">Computer vision, reinforcement learning, explainable AI and LLM systems, each with a demo you can watch.</p>
+    </div>
+    <div id="project-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10"></div>
+  </div>
+</section>
+
+<section id="journey" class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-navy-900 mb-12">Education and experience</h2>
+    <div id="timeline"></div>
+    <h3 class="text-xl font-bold text-navy-900 mt-6 mb-4">Certifications</h3>
+    <div id="certs" class="flex flex-wrap gap-2"></div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 bg-navy-900 text-white">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Get in touch</h2>
+    <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
+      For admissions committees, supervisors and hiring teams: I would be glad to talk about how my research and engineering work fits your program or role.
+    </p>
+    <div id="links" class="flex flex-wrap justify-center gap-4"></div>
+  </div>
+</section>
+
+<footer class="bg-navy-900 border-t border-slate-800 py-6 text-center text-slate-400 text-sm">
+  © <span id="year"></span> Roaa Raafat
+</footer>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CONFIG = {
+  email: 'you@example.com',
+  github: 'https://github.com/YOUR-USERNAME',
+  linkedin: 'https://www.linkedin.com/in/YOUR-HANDLE',
+  cv: 'assets/Roaa_Raafat_CV.pdf'
+};
+
+/* media types: 'video' (mp4 in assets/), 'youtube' (unlisted video id), 'image'.
+   A link with an empty URL is hidden, so fill links in as your repos and papers go public. */
+const PROJECTS = [
+  {
+    title: 'SumoFlowAI: smart traffic management for Cairo',
+    summary: 'My graduation thesis: an end-to-end system for El-Tahrir Square that combines SUMO simulation, a benchmark of YOLOv8s, Faster-RCNN and RetinaNet for vehicle detection, BiLSTM traffic-flow forecasting, and a DQN signal controller that cut CO₂ emissions and waiting time by 90% or more across traffic profiles. It generalized to Istanbul and led to two papers. My contribution: the BiLSTM flow predictor (MAE 3.15).',
+    tags: ['SUMO', 'YOLOv8', 'BiLSTM', 'DQN', 'PyTorch'],
+    media: { type: 'video', src: 'assets/sumoflow-demo.mp4', poster: 'assets/sumoflow-poster.jpg' },
+    links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Papers', '']]
+  },
+  {
+    title: 'Explainable deepfake detection',
+    summary: 'A CNN tuned with modern metaheuristics to detect manipulated media, with an automated explainability pipeline (Grad-CAM, LIME, SHAP) that shows which regions drive each decision.',
+    tags: ['CNN', 'Metaheuristics', 'Grad-CAM', 'LIME', 'SHAP'],
+    media: { type: 'image', src: 'assets/deepfake-xai.png', alt: 'Grad-CAM heatmaps on detected deepfakes' },
+    links: [['GitHub', '']]
+  },
+  {
+    title: 'RAG question answering',
+    summary: 'A retrieval-augmented generation system that answers questions over a document collection, using Llama 3.1 for generation and a FAISS vector index for retrieval.',
+    tags: ['Llama 3.1', 'FAISS', 'LangChain'],
+    media: { type: 'video', src: 'assets/rag-demo.mp4', poster: 'assets/rag-poster.jpg' },
+    links: [['GitHub', '']]
+  },
+  {
+    title: 'Multi-agent code commenter',
+    summary: 'A REST API that documents code automatically. CrewAI agents running DeepSeek-Coder locally through Ollama analyze the logic, write docstrings and generate a README.',
+    tags: ['FastAPI', 'CrewAI', 'Ollama', 'DeepSeek-Coder'],
+    media: { type: 'video', src: 'assets/commenter-demo.mp4', poster: 'assets/commenter-poster.jpg' },
+    links: [['GitHub', '']]
+  }
+];
+
+const SKILLS = {
+  'Languages': ['Python', 'C++', 'SQL'],
+  'ML and vision': ['PyTorch', 'TensorFlow', 'YOLOv8', 'Reinforcement learning'],
+  'LLMs and agents': ['LangChain', 'CrewAI', 'Ollama', 'FAISS'],
+  'Engineering': ['Docker', 'FastAPI', 'Git']
+};
+
+// Add more entries here (open-source work, internships, GSoC prototypes), newest first.
+const JOURNEY = [
+  { when: 'Now', title: 'Applying for Master’s and PhD funding', org: 'AI for smart cities and explainable AI',
+    text: 'Seeking scholarship-funded programs that connect deep learning with urban infrastructure, building on my traffic-optimization thesis.' },
+  { when: 'Graduated June 2026', title: 'BSc, Data Science and Artificial Intelligence', org: 'Zewail City of Science and Technology',
+    text: 'Foundations in calculus, linear algebra, algorithms and machine learning. Thesis: SumoFlowAI, backed by two papers.' }
+];
+
+const CERTS = ['Oracle OCI Generative AI Professional', 'AWS Educate Machine Learning Foundations', 'NVIDIA Deep Learning Institute'];
+/* ===== END EDIT ===== */
+
+const $ = id => document.getElementById(id);
+const chip = (t, cls) => `<span class="px-3 py-1.5 rounded-md text-sm font-medium ${cls}">${t}</span>`;
+
+function media(m) {
+  if (m.type === 'youtube') return `<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}" title="Demo video" loading="lazy" allowfullscreen></iframe>`;
+  if (m.type === 'video') return `<video class="w-full h-full object-cover" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
+  return `<img class="w-full h-full object-cover" src="${m.src}" alt="${m.alt || ''}" loading="lazy">`;
+}
+
+$('project-grid').innerHTML = PROJECTS.map(p => `
+  <article class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+    <div class="media aspect-video bg-slate-900 flex items-center justify-center text-slate-400 text-sm">${media(p.media)}</div>
+    <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-bold text-navy-900 mb-2">${p.title}</h3>
+      <p class="text-slate-600 text-sm mb-4 flex-grow">${p.summary}</p>
+      <div class="flex flex-wrap gap-2 mb-6">${p.tags.map(t => `<span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded font-medium">${t}</span>`).join('')}</div>
+      <div class="flex gap-3">${p.links.filter(l => l[1]).map((l, i) => `<a href="${l[1]}" target="_blank" rel="noopener" class="flex-1 text-center py-2 px-4 rounded-md text-sm font-medium ${i ? 'border border-slate-300 text-slate-700 hover:bg-slate-50' : 'bg-navy-900 text-white hover:bg-slate-800'}">${l[0]}</a>`).join('')}</div>
+    </div>
+  </article>`).join('');
+
+// Missing demo file? Show a neutral tile instead of a broken player (error events don't bubble, so capture).
+document.querySelectorAll('.media').forEach(b => b.addEventListener('error', () => { b.textContent = 'Demo coming soon'; }, true));
+
+$('skills').innerHTML = Object.entries(SKILLS).map(([k, v]) =>
+  `<div><p class="text-sm font-semibold text-slate-500 mb-2">${k}</p><div class="flex flex-wrap gap-2">${v.map(s => chip(s, 'bg-white border border-slate-200 text-slate-700')).join('')}</div></div>`).join('');
+
+$('timeline').innerHTML = JOURNEY.map(j => `
+  <div class="border-l-2 border-accent-600 pl-6 pb-10">
+    <p class="text-sm font-semibold text-accent-600">${j.when}</p>
+    <h3 class="text-xl font-bold text-navy-900">${j.title}</h3>
+    <p class="text-slate-700 font-medium">${j.org}</p>
+    <p class="text-slate-600 text-sm mt-2">${j.text}</p>
+  </div>`).join('');
+
+$('certs').innerHTML = CERTS.map(c => chip(c, 'bg-blue-50 border border-blue-100 text-blue-700')).join('');
+
+$('links').innerHTML = [['Email', 'mailto:' + CONFIG.email], ['GitHub', CONFIG.github], ['LinkedIn', CONFIG.linkedin], ['CV', CONFIG.cv]]
+  .map(([n, h]) => `<a href="${h}" target="_blank" rel="noopener" class="px-6 py-3 bg-slate-800 rounded-lg font-medium hover:bg-accent-600 transition-colors">${n}</a>`).join('');
+
+$('cv-btn').href = CONFIG.cv;
+$('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
