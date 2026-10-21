@@ -117,12 +117,12 @@ const CONFIG = {
 const PROJECTS = [
   {
     title: 'SumoFlowAI: adaptive traffic signal control for El-Tahrir Square, Cairo',
-    summary: 'Graduation project (team of three). SUMO simulates El-Tahrir Square; YOLOv8s detects vehicles (71.2% mAP@0.5, compared with Faster R-CNN and RetinaNet); a BiLSTM forecasts flow per direction 30 seconds ahead; and Dueling Double DQN agents control 7 junctions. Against fixed-time plans, average waiting time fell 25.2% and CO₂ 17.9% overall, with an 86.5% waiting-time cut in the morning rush, while waiting time rose in the evening rush and at night. The same pipeline ran on Taksim Square, Istanbul, with no code changes. My part: the BiLSTM flow predictor, RetinaNet and Dueling Double DQN agents.',
+    summary: 'Graduation project (team of three). SUMO simulates El-Tahrir Square; YOLOv8s detects vehicles (71.2% mAP@0.5, compared with Faster R-CNN and RetinaNet); a BiLSTM forecasts flow per direction 30 seconds ahead; and Dueling Double DQN agents control 7 junctions. Against fixed-time plans, average waiting time fell 25.2% and CO₂ 17.9% overall, with an 86.5% waiting-time cut in the morning rush. The same pipeline ran on Taksim Square, Istanbul, with no code changes. My part: the BiLSTM flow predictor, RetinaNet and Dueling Double DQN agents.',
     tags: ['SUMO', 'YOLOv8', 'BiLSTM', 'Dueling DQN', 'FastAPI', 'React'],
     media: [
       { label: 'Demo', type: 'video', src: 'assets/sumoflow-demo.mp4', poster: 'assets/sumoflow-poster.jpg' },
       { label: 'Architecture', type: 'image', src: 'assets/sumoflow-architecture.jpeg', alt: 'Diagram of the SUMOFlowAI pipeline' },
-      { label: 'Results', type: 'image', src: 'assets/sumoflow-results.jpg', alt: 'Before and after dashboard comparing fixed-time and DQN control' },
+      { label: 'Results', type: 'image', src: 'assets/sumoflow-results.png', alt: 'Before and after dashboard comparing fixed-time and DQN control' },
       { label: 'Thesis', type: 'pdf', src: 'assets/SUMOFlowAI_Thesis.pdf' }
     ],
     links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Thesis (PDF)', 'assets/SUMOFlowAI_Thesis.pdf'], ['Live demo', '']]
