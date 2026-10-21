@@ -117,12 +117,14 @@ const CONFIG = {
    A link with an empty URL is hidden, so fill links in as repos and papers go public. */
 const PROJECTS = [
   {
-    title: 'SumoFlowAI: smart traffic management for Cairo',
-    summary: 'My graduation thesis: an end-to-end system for El-Tahrir Square that combines SUMO simulation, a benchmark of YOLOv8s, Faster-RCNN and RetinaNet for vehicle detection, BiLSTM traffic-flow forecasting, and a DQN signal controller that cut CO₂ emissions and waiting time by 90% or more across traffic profiles. It generalized to Istanbul and led to two papers. My contribution: the BiLSTM flow predictor (MAE 3.15).',
-    tags: ['SUMO', 'YOLOv8', 'BiLSTM', 'DQN', 'PyTorch'],
+    title: 'SumoFlowAI: adaptive traffic signal control for El-Tahrir Square, Cairo',
+    summary: 'Graduation project (team of three). SUMO simulates El-Tahrir Square; YOLOv8s detects vehicles (71.2% mAP@0.5, compared with Faster R-CNN and RetinaNet); a BiLSTM forecasts flow per direction 30 seconds ahead; and Dueling Double DQN agents control 7 junctions. Against fixed-time plans, average waiting time fell 25.2% and CO₂ 17.9% overall, with an 86.5% waiting-time cut in the morning rush, while waiting time rose in the evening rush and at night. The same pipeline ran on Taksim Square, Istanbul, with no code changes. My part: the BiLSTM flow predictor, RetinaNet , and DQN.',
+    tags: ['SUMO', 'YOLOv8', 'BiLSTM', 'Dueling DQN', 'FastAPI', 'React'],
     media: { type: 'video', src: 'assets/sumoflow-demo.mp4', poster: 'assets/sumoflow-poster.jpg' },
-    links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Papers', '']]
-  },
+    links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Thesis (PDF)', 'assets/SUMOFlowAI_Thesis.pdf'], ['Live demo', '']]
+  }
+  
+  ,
   {
     title: 'Explainable deepfake detection',
     summary: 'A CNN tuned with modern metaheuristics to detect manipulated media, with an automated explainability pipeline (Grad-CAM, LIME, SHAP) that shows which regions drive each decision.',
