@@ -128,18 +128,13 @@ const PROJECTS = [
     links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Thesis (PDF)', 'assets/SUMOFlowAI_Thesis.pdf'], ['Live demo', '']]
   },
   {
-    title: 'Explainable deepfake detection',
-    summary: 'A CNN tuned with modern metaheuristics to detect manipulated media, with an automated explainability pipeline (Grad-CAM, LIME, SHAP) that shows which regions drive each decision.',
-    tags: ['CNN', 'Metaheuristics', 'Grad-CAM', 'LIME', 'SHAP'],
-    media: { type: 'image', src: 'assets/deepfake-xai.png', alt: 'Grad-CAM heatmaps on detected deepfakes' },
-    links: [['GitHub', '']]
-  },
-  {
-    title: 'RAG question answering',
-    summary: 'A retrieval-augmented generation system that answers questions over a document collection, using Llama 3.1 for generation and a FAISS vector index for retrieval.',
-    tags: ['Llama 3.1', 'FAISS', 'LangChain'],
-    media: { type: 'video', src: 'assets/rag-demo.mp4', poster: 'assets/rag-poster.jpg' },
-    links: [['GitHub', '']]
+    title: 'Multimodal Document Intelligence',
+    summary: 'A multimodal RAG system for question answering over complex PDFs, using ColPali (ColQwen2) visual embeddings and MaxSim late-interaction retrieval to find relevant pages containing text, tables, and charts, with Gemini-powered answers and page citations.',
+    tags: ['ColPali', 'ColQwen2', 'Multimodal RAG', 'Gemini', 'PyTorch'],
+    media: { type: 'video', src: 'assets/multimodal-rag-demo.mp4', poster: 'assets/multimodal-rag-poster.jpg' },
+    links: [
+      ['GitHub', 'https://github.com/Roaa-838/Multimodal-RAG']
+    ]
   },
   {
     title: 'Multi-agent code commenter',
@@ -159,10 +154,17 @@ const SKILLS = {
 
 // Add more entries here (open-source work, internships, GSoC prototypes), newest first.
 const JOURNEY = [
-  { when: 'Now', title: 'Applying for Master’s and PhD funding', org: 'AI for smart cities and explainable AI',
-    text: 'Seeking scholarship-funded programs that connect deep learning with urban infrastructure, building on my traffic-optimization thesis.' },
-  { when: 'Graduated June 2026', title: 'BSc, Data Science and Artificial Intelligence', org: 'Zewail City of Science and Technology',
-    text: 'Foundations in calculus, linear algebra, algorithms and machine learning. Thesis: SumoFlowAI, backed by two papers.' }
+  {
+    when: 'Now',
+    title: 'Pursuing Fully Funded Master’s and PhD Opportunities',
+    text: 'Seeking opportunities to advance my expertise in artificial intelligence, machine learning, and data science, with interests spanning generative AI, intelligent systems, and applied research.'
+  },
+  {
+    when: 'Graduated June 2026',
+    title: 'BSc, Data Science and Artificial Intelligence',
+    org: 'Zewail City of Science and Technology',
+    text: 'Built a strong foundation in mathematics, algorithms, machine learning, and AI through academic coursework and hands-on projects. Graduation thesis: SUMOFlowAI, an AI-driven traffic optimization project.'
+  }
 ];
 
 const CERTS = [
