@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of Roaa Raafat: machine learning projects in computer vision, reinforcement learning, explainable AI and LLM systems, with demo videos.">
 <meta property="og:title" content="Roaa Raafat | AI Researcher & ML Engineer">
 <meta property="og:description" content="Projects, research and demos in computer vision, explainable AI and LLM systems.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
@@ -41,10 +41,8 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
     </div>
   </div>
   <div class="md:w-2/5 flex justify-center">
-    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-slate-200 border-8 border-white shadow-xl overflow-hidden">
-      <img src="assets/profile.png" alt="Roaa Raafat" class="w-full h-full object-cover"
-           onerror="this.onerror=null;this.src='https://placehold.co/400x400/1e293b/ffffff?text=RR'">
-    </div>
+    <img src="assets/profile.jpg" alt="Roaa Raafat" class="w-auto h-auto max-w-full max-h-[34rem] rounded-3xl border-8 border-white shadow-xl bg-slate-200"
+         onerror="this.onerror=null;this.src='https://placehold.co/400x500/1e293b/ffffff?text=RR'">
   </div>
 </header>
 
@@ -53,16 +51,16 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
     <div>
       <h2 class="text-3xl font-bold text-navy-900 mb-6">About and research interests</h2>
       <p class="text-slate-600 mb-4 leading-relaxed">
-        I hold a BSc in Data Science and Artificial Intelligence from Zewail City of Science and Technology (June 2026). My work applies deep learning and reinforcement learning to complex systems such as city traffic, and I care about models whose decisions can be explained.
+        I hold a BSc in Data Science and Artificial Intelligence from Zewail City of Science and Technology (June 2026). I build AI that acts on real-world systems: multi-agent reinforcement learning and computer vision, tested in simulation before deployment, plus agentic LLM pipelines with retrieval. I design for trust from the start, with explainability, monitoring and behavior testing.
       </p>
       <p class="text-slate-600 mb-6 leading-relaxed">
-        I am applying for Master’s and PhD programs in AI for smart cities, and I am open to AI/ML engineering and data science roles.
+        I am applying for Master’s and PhD programs in AI, and I am open to AI/ML engineering and data science roles.
       </p>
       <ul class="space-y-2 text-slate-700 font-medium">
         <li>Deep learning and metaheuristics</li>
         <li>Explainable AI (Grad-CAM, LIME, SHAP)</li>
         <li>Reinforcement learning for traffic control</li>
-        <li>Agentic systems and RAG pipelines</li>
+        <li>LLMs, Agentic systems and RAG pipelines</li>
       </ul>
     </div>
     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
@@ -87,7 +85,7 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
     <h2 class="text-3xl font-bold text-navy-900 mb-12">Education and experience</h2>
     <div id="timeline"></div>
     <h3 class="text-xl font-bold text-navy-900 mt-6 mb-4">Certifications</h3>
-    <div id="certs" class="flex flex-wrap gap-2"></div>
+    <div id="certs" class="grid gap-3 sm:grid-cols-2"></div>
   </div>
 </section>
 
@@ -106,25 +104,29 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
 </footer>
 
 <script>
+/* ===== EDIT THESE ===== */
 const CONFIG = {
   email: 'roaaraafatzahran2003@gmail.com',
   github: 'https://github.com/Roaa-838',
-  linkedin: 'https://www.linkedin.com/in/roaa-raafat',
+  linkedin: 'https://www.linkedin.com/in/Roaa-Raafat',
   cv: 'assets/Roaa_Raafat_CV.pdf'
 };
 
-/* media types: 'video' (mp4 in assets/), 'youtube' (unlisted video id), 'image'.
-   A link with an empty URL is hidden, so fill links in as repos and papers go public. */
+/* media: one item or a list (a list shows as tabs). Types: 'video' (mp4 in assets/), 'youtube' (unlisted video id), 'image', 'pdf', 'diagram' (list of steps).
+   A link with an empty URL is hidden, so fill links in as your repos and papers go public. */
 const PROJECTS = [
   {
     title: 'SumoFlowAI: adaptive traffic signal control for El-Tahrir Square, Cairo',
-    summary: 'Graduation project (team of three). SUMO simulates El-Tahrir Square; YOLOv8s detects vehicles (71.2% mAP@0.5, compared with Faster R-CNN and RetinaNet); a BiLSTM forecasts flow per direction 30 seconds ahead; and Dueling Double DQN agents control 7 junctions. Against fixed-time plans, average waiting time fell 25.2% and CO₂ 17.9% overall, with an 86.5% waiting-time cut in the morning rush, while waiting time rose in the evening rush and at night. The same pipeline ran on Taksim Square, Istanbul, with no code changes. My part: the BiLSTM flow predictor, RetinaNet , and DQN.',
+    summary: 'Graduation project (team of three). SUMO simulates El-Tahrir Square; YOLOv8s detects vehicles (71.2% mAP@0.5, compared with Faster R-CNN and RetinaNet); a BiLSTM forecasts flow per direction 30 seconds ahead; and Dueling Double DQN agents control 7 junctions. Against fixed-time plans, average waiting time fell 25.2% and CO₂ 17.9% overall, with an 86.5% waiting-time cut in the morning rush, while waiting time rose in the evening rush and at night. The same pipeline ran on Taksim Square, Istanbul, with no code changes. My part: the BiLSTM flow predictor, RetinaNet and Dueling Double DQN agents.',
     tags: ['SUMO', 'YOLOv8', 'BiLSTM', 'Dueling DQN', 'FastAPI', 'React'],
-    media: { type: 'video', src: 'assets/sumoflow-demo.mp4', poster: 'assets/sumoflow-poster.jpg' },
+    media: [
+      { label: 'Demo', type: 'video', src: 'assets/sumoflow-demo.mp4', poster: 'assets/sumoflow-poster.jpg' },
+      { label: 'Architecture', type: 'diagram', steps: ['SUMO simulation', 'TraCI (every 10 steps)', 'Lane sensor data', 'YOLOv8s vehicle detection', 'BiLSTM flow forecast (30 s)', '7 DQN agents, one per junction', 'Signal phase applied via TraCI', 'FastAPI backend', 'React dashboard'] },
+      { label: 'Results', type: 'image', src: 'assets/sumoflow-results.jpg', alt: 'Before and after dashboard comparing fixed-time and DQN control' },
+      { label: 'Thesis', type: 'pdf', src: 'assets/SUMOFlowAI_Thesis.pdf' }
+    ],
     links: [['GitHub', 'https://github.com/ranna-waleed/sumoflow-ai-traffic-optimization'], ['Thesis (PDF)', 'assets/SUMOFlowAI_Thesis.pdf'], ['Live demo', '']]
-  }
-  
-  ,
+  },
   {
     title: 'Explainable deepfake detection',
     summary: 'A CNN tuned with modern metaheuristics to detect manipulated media, with an automated explainability pipeline (Grad-CAM, LIME, SHAP) that shows which regions drive each decision.',
@@ -163,21 +165,34 @@ const JOURNEY = [
     text: 'Foundations in calculus, linear algebra, algorithms and machine learning. Thesis: SumoFlowAI, backed by two papers.' }
 ];
 
-const CERTS = ['Oracle OCI Generative AI Professional', 'AWS Educate Machine Learning Foundations', 'NVIDIA Deep Learning Institute'];
+const CERTS = [
+  { name: 'Machine Learning Specialization', by: 'Stanford Online, DeepLearning.AI and Coursera' },
+  { name: 'Deep Learning Specialization', by: 'Stanford Online, DeepLearning.AI and Coursera'},
+  { name: 'IBM Generative AI Engineering Professional Certificate', by: 'Coursera' },
+  { name: 'IBM RAG and Agentic AI Professional Certificate', by: 'Coursera' },
+  { name: 'Oracle OCI Generative AI Professional' },
+  { name: 'AWS Educate Machine Learning Foundations' },
+  { name: 'NVIDIA Deep Learning Institute' }
+]; // delete the status field once a certificate is finished
 /* ===== END EDIT ===== */
 
 const $ = id => document.getElementById(id);
 const chip = (t, cls) => `<span class="px-3 py-1.5 rounded-md text-sm font-medium ${cls}">${t}</span>`;
 
+const asList = m => Array.isArray(m) ? m : [m];
+const tabs = p => asList(p.media).length < 2 ? '' : `<div class="flex flex-wrap gap-1 p-2 bg-slate-100 border-b border-slate-200">${asList(p.media).map((m, i) => `<button type="button" data-tab="${i}" class="tab px-3 py-1 rounded text-sm font-medium ${i ? 'text-slate-600 hover:bg-white' : 'bg-white text-accent-600 shadow-sm'}">${m.label || 'Media'}</button>`).join('')}</div>`;
+
 function media(m) {
   if (m.type === 'youtube') return `<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}" title="Demo video" loading="lazy" allowfullscreen></iframe>`;
-  if (m.type === 'video') return `<video class="w-full h-full object-cover" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
-  return `<img class="w-full h-full object-cover" src="${m.src}" alt="${m.alt || ''}" loading="lazy">`;
+  if (m.type === 'video') return `<video class="w-full h-full object-contain" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
+  if (m.type === 'pdf') return `<iframe class="w-full h-full bg-white" src="${m.src}" title="${m.label || 'PDF'}" loading="lazy"></iframe>`;
+  if (m.type === 'diagram') return `<div class="w-full h-full bg-white p-4 flex flex-wrap items-center justify-center content-center gap-x-1 gap-y-2 text-xs sm:text-sm">${m.steps.map((s, i) => `${i ? '<span class="text-slate-400">→</span>' : ''}<span class="rounded-md border border-blue-200 bg-blue-50 text-blue-800 font-medium px-2 py-1">${s}</span>`).join('')}</div>`;
+  return `<img class="w-full h-full object-contain bg-white" src="${m.src}" alt="${m.alt || ''}" loading="lazy">`;
 }
 
 $('project-grid').innerHTML = PROJECTS.map(p => `
   <article class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
-    <div class="media aspect-video bg-slate-900 flex items-center justify-center text-slate-400 text-sm">${media(p.media)}</div>
+    ${tabs(p)}<div class="media aspect-video bg-slate-900 flex items-center justify-center text-slate-400 text-sm">${media(asList(p.media)[0])}</div>
     <div class="p-6 flex flex-col flex-grow">
       <h3 class="text-xl font-bold text-navy-900 mb-2">${p.title}</h3>
       <p class="text-slate-600 text-sm mb-4 flex-grow">${p.summary}</p>
@@ -188,6 +203,18 @@ $('project-grid').innerHTML = PROJECTS.map(p => `
 
 // Missing demo file? Show a neutral tile instead of a broken player (error events don't bubble, so capture).
 document.querySelectorAll('.media').forEach(b => b.addEventListener('error', () => { b.textContent = 'Demo coming soon'; }, true));
+
+document.querySelectorAll('#project-grid article').forEach((card, pi) => {
+  const list = asList(PROJECTS[pi].media), box = card.querySelector('.media');
+  card.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+    box.innerHTML = media(list[btn.dataset.tab]);
+    card.querySelectorAll('.tab').forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('bg-white', on); b.classList.toggle('text-accent-600', on);
+      b.classList.toggle('shadow-sm', on); b.classList.toggle('text-slate-600', !on);
+    });
+  }));
+});
 
 $('skills').innerHTML = Object.entries(SKILLS).map(([k, v]) =>
   `<div><p class="text-sm font-semibold text-slate-500 mb-2">${k}</p><div class="flex flex-wrap gap-2">${v.map(s => chip(s, 'bg-white border border-slate-200 text-slate-700')).join('')}</div></div>`).join('');
@@ -200,7 +227,7 @@ $('timeline').innerHTML = JOURNEY.map(j => `
     <p class="text-slate-600 text-sm mt-2">${j.text}</p>
   </div>`).join('');
 
-$('certs').innerHTML = CERTS.map(c => chip(c, 'bg-blue-50 border border-blue-100 text-blue-700')).join('');
+$('certs').innerHTML = CERTS.map(c => `<div class="bg-blue-50 border border-blue-100 rounded-md px-4 py-3"><p class="font-medium text-blue-800">${c.name}${c.status ? ` <span class="ml-1 text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-800">${c.status}</span>` : ''}</p>${c.by ? `<p class="text-sm text-slate-600">${c.by}</p>` : ''}</div>`).join('');
 
 $('links').innerHTML = [['Email', 'mailto:' + CONFIG.email], ['GitHub', CONFIG.github], ['LinkedIn', CONFIG.linkedin], ['CV', CONFIG.cv]]
   .map(([n, h]) => `<a href="${h}" target="_blank" rel="noopener" class="px-6 py-3 bg-slate-800 rounded-lg font-medium hover:bg-accent-600 transition-colors">${n}</a>`).join('');
