@@ -102,6 +102,9 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
 <footer class="bg-navy-900 border-t border-slate-800 py-6 text-center text-slate-400 text-sm">
   © <span id="year"></span> Roaa Raafat
 </footer>
+<div id="lightbox" class="hidden fixed inset-0 z-[60] bg-black/80 overflow-auto p-4 cursor-zoom-out">
+  <img id="lightbox-img" class="mx-auto bg-white rounded-lg" style="max-width:min(100%,1400px)" alt="">
+</div>
 
 <script>
 /* ===== EDIT THESE ===== */
@@ -131,7 +134,10 @@ const PROJECTS = [
     title: 'Multimodal Document Intelligence',
     summary: 'A multimodal RAG system for question answering over complex PDFs, using ColPali (ColQwen2) visual embeddings and MaxSim late-interaction retrieval to find relevant pages containing text, tables, and charts, with Gemini-powered answers and page citations.',
     tags: ['ColPali', 'ColQwen2', 'Multimodal RAG', 'Gemini', 'PyTorch'],
-    media: { type: 'video', src: 'assets/multimodal-rag-demo.mp4', poster: 'assets/multimodal-rag-poster.jpg' },
+    media: [
+      { label: 'Demo', type: 'video', src: 'assets/multimodal-rag-demo.mp4', poster: 'assets/multimodal-rag-poster.jpg' },
+      { label: 'Architecture', type: 'image', src: 'assets/multimodal-rag-architecture.png', alt: 'Architecture diagram of the multimodal document RAG system' }
+    ],
     links: [
       ['GitHub', 'https://github.com/Roaa-838/Multimodal-RAG']
     ]
@@ -140,15 +146,28 @@ const PROJECTS = [
     title: 'Multi-agent code commenter',
     summary: 'A REST API that documents code automatically. CrewAI agents running DeepSeek-Coder locally through Ollama analyze the logic, write docstrings and generate a README.',
     tags: ['FastAPI', 'CrewAI', 'Ollama', 'DeepSeek-Coder'],
-    media: { type: 'video', src: 'assets/commenter-demo.mp4', poster: 'assets/commenter-poster.jpg' },
-    links: [['GitHub', '']]
-  }
+    media: [
+      { label: 'Demo', type: 'video', src: 'assets/commenter-demo.mp4', poster: 'assets/commenter-poster.jpg' },
+      { label: 'Architecture', type: 'image', src: 'assets/ai-comment-generator-architecture.png', alt: 'Architecture diagram of the multi-agent code commenter' }
+    ],
+    links: [['GitHub', 'https://github.com/ahmed-khaled-4/ai-comment-generator']]
+  },
+  {
+  title: 'Multi-Modal Chest X-Ray Intelligence System',
+  summary: 'A dual-mode medical AI system for chest radiograph interpretation. Mode 1 generates a structured radiology report from an uploaded X-ray. Mode 2 answers clinical questions about an X-ray with RAG, grounded in retrieved evidence. It uses MedGemma-4B-it for report and answer generation, ColPali-v1.2 for multimodal visual retrieval, and BiomedCLIP for image-text similarity retrieval, with MedSigLIP as the vision encoder inside MedGemma. Built on the MIMIC-CXR dataset.',
+  tags: ['MedGemma', 'ColPali', 'BiomedCLIP', 'RAG', 'MIMIC-CXR', 'PyTorch'],
+  media: [
+    { label: 'Architecture', type: 'image', src: 'assets/cxrray-architecture.png', alt: 'Architecture diagram of the chest X-ray report generation and RAG QA system' }
+  ],
+  links: [['GitHub', 'https://github.com/Roaa-838/cxr-intelligence2']]
+}
+
 ];
 
 const SKILLS = {
   'Languages': ['Python', 'C++', 'SQL'],
   'ML and vision': ['PyTorch', 'TensorFlow', 'YOLOv8', 'Reinforcement learning'],
-  'LLMs and agents': ['LangChain', 'CrewAI', 'Ollama', 'FAISS'],
+  'LLMs and agents': ['LangChain', 'CrewAI', 'Ollama', 'FAISS', 'RAG'],
   'Engineering': ['Docker', 'FastAPI', 'Git']
 };
 
@@ -187,7 +206,7 @@ function media(m) {
   if (m.type === 'video') return `<video class="w-full h-full object-contain" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
   if (m.type === 'pdf') return `<iframe class="w-full h-full bg-white" src="${m.src}" title="${m.label || 'PDF'}" loading="lazy"></iframe>`;
   if (m.type === 'diagram') return `<div class="w-full h-full bg-white p-4 flex flex-wrap items-center justify-center content-center gap-x-1 gap-y-2 text-xs sm:text-sm">${m.steps.map((s, i) => `${i ? '<span class="text-slate-400">→</span>' : ''}<span class="rounded-md border border-blue-200 bg-blue-50 text-blue-800 font-medium px-2 py-1">${s}</span>`).join('')}</div>`;
-  return `<img class="w-full h-full object-contain bg-white" src="${m.src}" alt="${m.alt || ''}" loading="lazy">`;
+  return `<img class="w-full h-full object-contain bg-white cursor-zoom-in" data-zoom src="${m.src}" alt="${m.alt || ''}" loading="lazy" title="Click to enlarge">`;
 }
 
 $('project-grid').innerHTML = PROJECTS.map(p => `
@@ -234,6 +253,18 @@ $('links').innerHTML = [['Email', 'mailto:' + CONFIG.email], ['GitHub', CONFIG.g
 
 $('cv-btn').href = CONFIG.cv;
 $('year').textContent = new Date().getFullYear();
+const lb = $('lightbox'), lbImg = $('lightbox-img');
+const closeLb = () => { lb.classList.add('hidden'); document.body.style.overflow = ''; };
+document.addEventListener('click', e => {
+  const z = e.target.closest('[data-zoom]');
+  if (z) {
+    lbImg.src = z.src; lbImg.alt = z.alt;
+    lb.classList.remove('hidden'); lb.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  } else if (e.target.closest('#lightbox')) closeLb();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
+
 </body>
 </html>
