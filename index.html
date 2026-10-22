@@ -157,6 +157,7 @@ const PROJECTS = [
   summary: 'A dual-mode medical AI system for chest radiograph interpretation. Mode 1 generates a structured radiology report from an uploaded X-ray. Mode 2 answers clinical questions about an X-ray with RAG, grounded in retrieved evidence. It uses MedGemma-4B-it for report and answer generation, ColPali-v1.2 for multimodal visual retrieval, and BiomedCLIP for image-text similarity retrieval, with MedSigLIP as the vision encoder inside MedGemma. Built on the MIMIC-CXR dataset.',
   tags: ['MedGemma', 'ColPali', 'BiomedCLIP', 'RAG', 'MIMIC-CXR', 'PyTorch'],
   media: [
+    { label: 'Demo', type: 'video', src: 'assets/cxr-demo.mp4', poster: 'assets/cxr-poster.jpg' },
     { label: 'Architecture', type: 'image', src: 'assets/cxrray-architecture.png', alt: 'Architecture diagram of the chest X-ray report generation and RAG QA system' }
   ],
   links: [['GitHub', 'https://github.com/Roaa-838/cxr-intelligence2']]
