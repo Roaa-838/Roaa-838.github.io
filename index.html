@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roaa Raafat | AI Researcher & ML Engineer</title>
-<meta name="description" content="Portfolio of Roaa Raafat: machine learning projects in computer vision, reinforcement learning, explainable AI and LLM systems, with demo videos.">
+<meta name="description" content="Portfolio of Roaa Raafat: machine learning projects in computer vision, reinforcement learning, explainable AI and LLM systems, with architecture diagrams and project documentation.">
 <meta property="og:title" content="Roaa Raafat | AI Researcher & ML Engineer">
-<meta property="og:description" content="Projects, research and demos in computer vision, explainable AI and LLM systems.">
+<meta property="og:description" content="Projects and research in computer vision, explainable AI and LLM systems.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -74,7 +74,7 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Research and projects</h2>
-      <p class="text-slate-600 max-w-2xl mx-auto">Computer vision, reinforcement learning, explainable AI and LLM systems, each with a demo you can watch.</p>
+      <p class="text-slate-600 max-w-2xl mx-auto">Explore my work in computer vision, reinforcement learning, explainable AI and LLM systems, with architecture diagrams and project details.</p>
     </div>
     <div id="project-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10"></div>
   </div>
@@ -155,11 +155,11 @@ const PROJECTS = [
   summary: 'A dual-mode medical AI system for chest radiograph interpretation. Mode 1 generates a structured radiology report from an uploaded X-ray. Mode 2 answers clinical questions about an X-ray with RAG, grounded in retrieved evidence. It uses MedGemma-4B-it for report and answer generation, ColPali-v1.2 for multimodal visual retrieval, and BiomedCLIP for image-text similarity retrieval, with MedSigLIP as the vision encoder inside MedGemma. Built on the MIMIC-CXR dataset.',
   tags: ['MedGemma', 'ColPali', 'BiomedCLIP', 'RAG', 'MIMIC-CXR', 'PyTorch'],
   media: [
-    { label: 'Demo', type: 'video', src: 'assets/cxr-demo.mp4', poster: 'assets/cxr-poster.jpg' },
     { label: 'Architecture', type: 'image', src: 'assets/cxrray-architecture.png', alt: 'Architecture diagram of the chest X-ray report generation and RAG QA system' }
   ],
   links: [['GitHub', 'https://github.com/Roaa-838/cxr-intelligence2']]
 }
+
 ];
 
 const SKILLS = {
@@ -200,16 +200,16 @@ const asList = m => Array.isArray(m) ? m : [m];
 const tabs = p => asList(p.media).length < 2 ? '' : `<div class="flex flex-wrap gap-1 p-2 bg-slate-100 border-b border-slate-200">${asList(p.media).map((m, i) => `<button type="button" data-tab="${i}" class="tab px-3 py-1 rounded text-sm font-medium ${i ? 'text-slate-600 hover:bg-white' : 'bg-white text-accent-600 shadow-sm'}">${m.label || 'Media'}</button>`).join('')}</div>`;
 
 function media(m) {
-  if (m.type === 'youtube') return `<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}" title="Demo video" loading="lazy" allowfullscreen></iframe>`;
-  if (m.type === 'video') return `<video class="w-full h-full object-contain" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
-  if (m.type === 'pdf') return `<iframe class="w-full h-full bg-white" src="${m.src}" title="${m.label || 'PDF'}" loading="lazy"></iframe>`;
+  if (m.type === 'youtube') return `<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}" title="Demo video" loading="lazy" allowfullscreen></iframe>`;
+  if (m.type === 'video') return `<video class="absolute inset-0 w-full h-full object-contain bg-slate-900" controls preload="none" playsinline poster="${m.poster || ''}"><source src="${m.src}" type="video/mp4"></video>`;
+  if (m.type === 'pdf') return `<iframe class="absolute inset-0 w-full h-full bg-white" src="${m.src}" title="${m.label || 'PDF'}" loading="lazy"></iframe>`;
   if (m.type === 'diagram') return `<div class="w-full h-full bg-white p-4 flex flex-wrap items-center justify-center content-center gap-x-1 gap-y-2 text-xs sm:text-sm">${m.steps.map((s, i) => `${i ? '<span class="text-slate-400">→</span>' : ''}<span class="rounded-md border border-blue-200 bg-blue-50 text-blue-800 font-medium px-2 py-1">${s}</span>`).join('')}</div>`;
-  return `<img class="w-full h-full object-contain bg-white cursor-zoom-in" data-zoom src="${m.src}" alt="${m.alt || ''}" loading="lazy" title="Click to enlarge">`;
+  return `<img class="absolute inset-0 w-full h-full object-contain p-3 bg-white cursor-zoom-in" data-zoom src="${m.src}" alt="${m.alt || ''}" loading="lazy" title="Click to enlarge">`;
 }
 
 $('project-grid').innerHTML = PROJECTS.map(p => `
-  <article class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
-    ${tabs(p)}<div class="media aspect-video bg-slate-900 flex items-center justify-center text-slate-400 text-sm">${media(asList(p.media)[0])}</div>
+  <article class="min-w-0 bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+    ${tabs(p)}<div class="media relative w-full h-64 sm:h-72 overflow-hidden bg-white flex items-center justify-center text-slate-400 text-sm">${media(asList(p.media)[0])}</div>
     <div class="p-6 flex flex-col flex-grow">
       <h3 class="text-xl font-bold text-navy-900 mb-2">${p.title}</h3>
       <p class="text-slate-600 text-sm mb-4 flex-grow">${p.summary}</p>
@@ -218,8 +218,12 @@ $('project-grid').innerHTML = PROJECTS.map(p => `
     </div>
   </article>`).join('');
 
-// Missing demo file? Show a neutral tile instead of a broken player (error events don't bubble, so capture).
-document.querySelectorAll('.media').forEach(b => b.addEventListener('error', () => { b.textContent = 'Demo coming soon'; }, true));
+document.querySelectorAll('#project-grid video').forEach(video => {
+  video.addEventListener('error', () => {
+    const box = video.closest('.media');
+    if (box) box.innerHTML = '<div class="p-6 text-center text-sm text-slate-500 bg-slate-50 w-full h-full flex items-center justify-center">Demo video could not be loaded. Check that the video file is included in the assets folder.</div>';
+  }, { once: true });
+});
 
 document.querySelectorAll('#project-grid article').forEach((card, pi) => {
   const list = asList(PROJECTS[pi].media), box = card.querySelector('.media');
