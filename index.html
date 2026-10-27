@@ -54,7 +54,7 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
         I hold a BSc in Data Science and Artificial Intelligence from Zewail City of Science and Technology (June 2026). I build AI that acts on real-world systems: multi-agent reinforcement learning and computer vision, tested in simulation before deployment, plus agentic LLM pipelines with retrieval. I design for trust from the start, with explainability, monitoring and behavior testing.
       </p>
       <p class="text-slate-600 mb-6 leading-relaxed">
-        I am applying for Master’s and PhD programs in AI, and I am open to AI/ML engineering and data science roles.
+        I’m particularly interested in building reliable AI systems, evaluating them rigorously, and translating promising research into practical applications.
       </p>
       <ul class="space-y-2 text-slate-700 font-medium">
         <li>Deep learning and metaheuristics</li>
@@ -93,7 +93,7 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:
   <div class="max-w-3xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold mb-6">Get in touch</h2>
     <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
-      For admissions committees, supervisors and hiring teams: I would be glad to talk about how my research and engineering work fits your program or role.
+      I welcome conversations about AI engineering, applied machine learning research, and collaboration opportunities.
     </p>
     <div id="links" class="flex flex-wrap justify-center gap-4"></div>
   </div>
@@ -175,12 +175,6 @@ const SKILLS = {
 // Add more entries here (open-source work, internships, GSoC prototypes), newest first.
 const JOURNEY = [
   {
-    when: 'Now',
-    title: 'Pursuing Master’s and PhD Opportunities',
-    org: 'Post graduation, June 2026',
-    text: 'Seeking opportunities to advance my expertise in artificial intelligence, machine learning, and data science, with interests spanning generative AI, intelligent systems, and applied research.'
-  },
-  {
     when: 'Graduated June 2026',
     title: 'BSc, Data Science and Artificial Intelligence',
     org: 'Zewail City of Science and Technology',
@@ -200,7 +194,7 @@ const $ = id => document.getElementById(id);
 const chip = (t, cls) => `<span class="px-3 py-1.5 rounded-md text-sm font-medium ${cls}">${t}</span>`;
 
 const asList = m => Array.isArray(m) ? m : [m];
-const tabs = p => asList(p.media).length < 2 ? '' : `<div class="flex flex-wrap gap-1 p-2 bg-slate-100 border-b border-slate-200">${asList(p.media).map((m, i) => `<button type="button" data-tab="${i}" class="tab px-3 py-1 rounded text-sm font-medium ${i ? 'text-slate-600 hover:bg-white' : 'bg-white text-accent-600 shadow-sm'}">${m.label || 'Media'}</button>`).join('')}</div>`;
+const tabs = p => `<div class="flex flex-wrap gap-1 p-2 bg-slate-100 border-b border-slate-200">${asList(p.media).map((m, i) => asList(p.media).length === 1 ? `<span class="px-3 py-1 rounded text-sm font-medium bg-white text-accent-600 shadow-sm">${m.label || 'Media'}</span>` : `<button type="button" data-tab="${i}" class="tab px-3 py-1 rounded text-sm font-medium ${i ? 'text-slate-600 hover:bg-white' : 'bg-white text-accent-600 shadow-sm'}">${m.label || 'Media'}</button>`).join('')}</div>`;
 
 function media(m) {
   if (m.type === 'youtube') return `<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}" title="Demo video" loading="lazy" allowfullscreen></iframe>`;
